@@ -9,7 +9,7 @@ const TodoList = ({ children }) => {
 };
 
 TodoList.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 };
 
 export default TodoList;

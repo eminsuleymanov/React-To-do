@@ -1,9 +1,18 @@
 
-function Index() {
-  return (
-    
-    <div>Index</div>
-  )
-}
+import PropTypes from 'prop-types';
 
-export default Index
+const TodoItem = ({ title, isDone }) => {
+  return (
+    <div>
+      <input type="checkbox" checked={isDone} />
+      <span>{title}</span>
+    </div>
+  );
+};
+
+TodoItem.propTypes = {
+  title: PropTypes.string,
+  isDone: PropTypes.bool
+};
+
+export default TodoItem;

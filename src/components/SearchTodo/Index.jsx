@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 
 const SearchTodo = ({ todos }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -20,12 +22,14 @@ const SearchTodo = ({ todos }) => {
         onChange={handleChange}
       />
       <ul>
-        {searchResults.map((result, index) => (
-          <li key={index}>{result.title}</li>
+        {searchResults.map((result, idx) => (
+          <li key={idx}>{result.title}</li>
         ))}
       </ul>
     </div>
   );
 };
-
+SearchTodo.propTypes = {
+  todos: PropTypes.array
+}
 export default SearchTodo;

@@ -13,10 +13,12 @@ const Todo = () => {
 
   return (
     <div>
-      <AddTodo onAdd={handleAddTodo} />
-      <SearchTodo/>
+      <h1>Todo List</h1>
+      <AddTodo data={todos} setdata={setTodos} onAdd={handleAddTodo} />
+      <SearchTodo todos={todos}/>
       <TodoList>
         {todos.map((todo) => (
+          
           <TodoItem key={todo.id} {...todo} />
         ))}
       </TodoList>
